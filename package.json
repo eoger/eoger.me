@@ -14,5 +14,8 @@
     "debug": "~2.0.0",
     "hjs": "~0.0.6",
     "bayes": "0.0.4"
+  },
+  "devDependencies": {
+    "gulp": "~3.8.10"
   }
 }
