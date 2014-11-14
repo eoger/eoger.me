@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var bayes = require('bayes')
-var classifier = bayes();
+var natural = require('natural')
+var classifier = new natural.BayesClassifier();
 
 // learning phase
 var questions = [
@@ -24,8 +24,9 @@ var questions = [
 
 for(var i = 0; i < questions.length; i++) {
   var question = questions[i];
-  classifier.learn(question.text, question.topic);
+  classifier.addDocument(question.text, question.topic);
 }
+classifier.train();
 
 var responses = {
   age: 'I am 24 years old'
@@ -37,7 +38,7 @@ router.post('/', function (req, res) {
 	var text = req.body.text;
   console.log("User text : " + text);
 
-  var category = classifier.categorize(text);
+  var category = classifier.classify(text);
   console.log("Category infered : " + category);
 
   var response = responses[category];
