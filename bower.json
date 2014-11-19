@@ -1,0 +1,21 @@
+{
+  "name": "eoger.me",
+  "version": "1.0.0",
+  "homepage": "https://github.com/eoger/eoger.me",
+  "authors": [
+    "Edouard Oger <edouard.oger@gmail.com>"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}

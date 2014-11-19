@@ -19,7 +19,8 @@ var questions = [
   {text: 'Do you have a driving licence?', topic: 'driving-licence'},
   {text: 'Where do you live?', topic: 'localisation'},
   {text: 'Where are you located?', topic: 'localisation'},
-  {text: 'What languages do you speak?', topic: 'language'}
+  {text: 'What languages do you speak?', topic: 'languages'},
+  {text: 'Where can i download your resume?', topic: 'resume'}
 ];
 
 for(var i = 0; i < questions.length; i++) {
