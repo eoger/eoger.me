@@ -2,47 +2,47 @@ html,
 body,
 .container-fluid {
   height: 100%;
-  padding: 5px;
-}
-.container-fluid {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: column;
-}
-#chat-messages {
-  flex: 1;
 }
 .pull-bottom {
   height: 100%;
 }
-#chat-input {
-  margin-top: 5px;
-}
-#chat-input form {
+.container-fluid {
+  padding: 15px;
   display: -webkit-box;
   display: -moz-box;
-  display: -ms-flexbox;
   display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
 }
-#chat-input input {
+.container-fluid #chat-messages {
   flex: 1;
 }
-#chat-input button {
-  margin-left: 5px;
-}
-.eoger {
+.container-fluid #chat-messages .eoger {
+  max-width: 50%;
+  background-color: #80b3ff;
   margin-left: 10px;
-  max-width: 70%;
-  background-image: none;
-  background-color: #80B3FF;
 }
-.visitor {
+.container-fluid #chat-messages .visitor {
+  max-width: 50%;
+  background-color: #ffc2ce;
   margin-right: 10px;
-  max-width: 70%;
-  background-image: none;
-  background-color: #FFC2CE;
+}
+.container-fluid #chat-input {
+  margin-top: 5px;
+}
+.container-fluid #chat-input form {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.container-fluid #chat-input form input {
+  flex: 1;
+}
+.container-fluid #chat-input form button {
+  margin-left: 5px;
 }
