@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var less = require('gulp-less');
 var path = require('path');
-var livereload = require('gulp-livereload');
 
 var lessglob = './less/*.less';
 var cssdir = './public/css/';
@@ -19,4 +18,4 @@ gulp.task('watch', function() {
   gulp.watch(lessglob, ['less']);
 });
 
-gulp.task('default', ['less', 'watch']);
+gulp.task('default', ['less']);
