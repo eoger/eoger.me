@@ -1,13 +1,22 @@
 var gulp = require('gulp');
 var less = require('gulp-less');
 var path = require('path');
+var livereload = require('gulp-livereload');
+
+var lessglob = './less/*.less';
+var cssdir = './public/css/';
+var cssglob = cssdir + '*.css';
 
 gulp.task('less', function () {
-  gulp.src('./less/*.less')
+  gulp.src(lessglob)
     .pipe(less({
       paths: [ path.join(__dirname, 'less', 'includes') ]
     }))
-    .pipe(gulp.dest('./public/css'));
+    .pipe(gulp.dest(cssdir));
 });
 
-gulp.task('default', ['less']);
+gulp.task('watch', function() {
+  gulp.watch(lessglob, ['less']);
+});
+
+gulp.task('default', ['less', 'watch']);
