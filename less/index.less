@@ -1,55 +1,51 @@
+@import "flex-mixins.less";
+
 html, body, .container-fluid {
   height: 100%;
-  padding: 5px;
-}
-
-.container-fluid {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: column;
-}
-
-#chat-messages {
-  flex: 1;
 }
 
 .pull-bottom {
   height: 100%;
 }
 
-#chat-input {
-  margin-top: 5px;
-}
+.container-fluid {
+  padding: 15px;
+  .flex();
+  .flex-direction(column);
 
-#chat-input form {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-}
+  #chat-messages {
+    flex: 1;
 
-#chat-input input {
-  flex: 1;
-}
+    @message-margin: 10px;
+    .message(@bgcolor) {
+      max-width: 50%;
+      background-color: @bgcolor;
+    }
 
-#chat-input button {
-  margin-left: 5px;
-}
+    .eoger {
+      .message(#80B3FF);
+      margin-left: @message-margin;
+    }
 
-.eoger {
-  margin-left: 10px;
-  max-width: 70%;
-  background-image: none;
-  background-color: #80B3FF;
-}
+    .visitor {
+      .message(#FFC2CE);
+      margin-right: @message-margin;
+    }
+  }
 
-.visitor {
-  margin-right: 10px;
-  max-width: 70%;
-  background-image: none;
-  background-color: #FFC2CE;
+  #chat-input {
+    margin-top: 5px;
+
+    form {
+      .flex;
+
+      input {
+        flex: 1;
+      }
+
+      button {
+        margin-left: 5px;
+      }
+    }
+  }
 }
