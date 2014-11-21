@@ -5,7 +5,7 @@
   "scripts": {
     "postinstall": "bower install",
     "prestart": "gulp",
-    "start": "node ./bin/www"
+    "start": "DEBUG=eoger.me node ./bin/www"
   },
   "dependencies": {
     "express": "~4.9.0",
