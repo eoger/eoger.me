@@ -4,5 +4,5 @@
 # run the app:
      $ npm start
 
-# watch for changes on less files and auto-recompile:
-     $ gulp watch
+# watch and auto-recompile less files:
+     $ npm run watch
