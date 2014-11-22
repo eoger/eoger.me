@@ -1,11 +1,15 @@
 @import "//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/flatly/bootstrap.min.css";
+@import "//cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.5.7/perfect-scrollbar.min.css";
 @import "flex-mixins.less";
 
-html, body, #app, .container-fluid {
-  height: 100%;
+.box-sizing(@sizing: border-box) {
+  -ms-box-sizing: @sizing;
+  -moz-box-sizing: @sizing;
+  -webkit-box-sizing: @sizing;
+  box-sizing: @sizing;
 }
 
-.pull-bottom {
+html, body, #app, .container-fluid {
   height: 100%;
 }
 
@@ -16,26 +20,36 @@ html, body, #app, .container-fluid {
 
   #chat-messages {
     flex: 1;
+    overflow: auto;
 
-    @message-margin: 10px;
-    .message(@bgcolor) {
-      max-width: 50%;
-      background-color: @bgcolor;
-    }
+    .panel {
 
-    .eoger {
-      .message(#80B3FF);
-      margin-left: @message-margin;
-    }
+      .panel-body {
 
-    .visitor {
-      .message(#FFC2CE);
-      margin-right: @message-margin;
+        .scroll-wrapper {
+
+          @message-margin: 10px;
+          .message(@bgcolor) {
+            max-width: 50%;
+            background-color: @bgcolor;
+          }
+
+          .eoger {
+            .message(#80B3FF);
+            margin-left: @message-margin;
+          }
+
+          .visitor {
+            .message(#FFC2CE);
+            margin-right: @message-margin;
+          }
+        }
+      }
     }
   }
 
   #chat-input {
-    margin-top: 5px;
+    margin-top: 20px;
 
     form {
       .flex;

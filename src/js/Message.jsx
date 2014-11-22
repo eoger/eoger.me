@@ -26,16 +26,14 @@ var Message = React.createClass({
     }
 
     return (
-      <div className="row">
-        <div className="col-xs-12">
-          <div className={classes}>
-            <a className="media-left" href="#">
-              <img src={avatar} alt="Sender avatar" width="64" height="64" />
-            </a>
-            <div className="media-body">
-              <h4 className="media-heading">{prettyName}</h4>
-                <div dangerouslySetInnerHTML={{__html: this.props.text}} />
-            </div>
+      <div className="col-xs-12">
+        <div className={classes}>
+          <a className="media-left" href="#">
+            <img src={avatar} alt="Sender avatar" width="64" height="64" />
+          </a>
+          <div className="media-body">
+            <h4 className="media-heading">{prettyName}</h4>
+              <div dangerouslySetInnerHTML={{__html: this.props.text}} />
           </div>
         </div>
       </div>

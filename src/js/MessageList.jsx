@@ -5,6 +5,11 @@ var Message = require('./Message.jsx');
 var TypingMessage = require('./TypingMessage.jsx');
 
 var MessageList = React.createClass({
+   
+  componentDidUpdate: function() {
+    var node = this.getDOMNode();
+    node.scrollTop = node.scrollHeight;
+  },
 
   render: function() {
 
@@ -19,14 +24,16 @@ var MessageList = React.createClass({
 
     return (
       <div id="chat-messages" className="row">
-        <div className="col-md-12 pull-bottom">
-          <div className="panel panel-default pull-bottom">
+        <div className="col-md-12">
+          <div className="panel panel-default">
             <div className="panel-heading">
               Chat with Edouard Oger
             </div>
             <div className="panel-body">
-              {this.props.messages.map(renderMessage)}
-              {typingMessage}
+              <div className="scroll-wrapper">
+                {this.props.messages.map(renderMessage)}
+                {typingMessage}
+              </div>
             </div>
           </div>
         </div>
