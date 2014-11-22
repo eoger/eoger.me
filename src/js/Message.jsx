@@ -15,9 +15,7 @@ var Message = React.createClass({
     return (
       <div className="row">
         <div className="col-xs-12">
-          <div className={classes}>
-            {this.props.text}
-          </div>
+          <div className={classes} dangerouslySetInnerHTML={{__html: this.props.text}} />
         </div>
       </div>
     );

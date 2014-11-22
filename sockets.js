@@ -1,5 +1,6 @@
 "use strict";
 
+var Promise = require("bluebird");
 var socket = require('socket.io')();
 var chatbot = require('./lib/chatbot');
 
@@ -13,9 +14,14 @@ function delayedMessage(data) {
 }
 
 socket.on('connection', function (socket) {
-  delayedMessage(chatbot({text: 'firstmsg'}));
-  socket.on('message', function (data) {
-    delayedMessage(chatbot(data));
+  chatbot({text: 'firstmsg'}).then(function(response) {
+    delayedMessage(response);
+  });
+  
+  socket.on('message', function (data)   {
+    chatbot(data).then(function(response) {
+      delayedMessage(response);
+    });
   });
 });
 
