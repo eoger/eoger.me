@@ -30,3 +30,9 @@ node_modules
 # Sublime text extensions
 *.sublime-project
 *.sublime-workspace
+
+# Bower dependencies directory
+bower_components
+
+# Generated JS/CSS files dir
+build

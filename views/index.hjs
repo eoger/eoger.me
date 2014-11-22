@@ -1,55 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>edouardoger.me</title>
-    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/paper/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/index.css" rel="stylesheet">
-  </head>
-  <body>
-    <div class="container-fluid">
-      <div id="chat-messages" class="row">
-        <div class="col-md-12 pull-bottom">
-          <div class="panel panel-default pull-bottom">
-            <div class="panel-heading">
-                Chat with Edouard Oger
-            </div>
-            <div class="panel-body">
-              <div class="row">
-                <div class="col-xs-12">
-                  <div class="well pull-left eoger">
-                    How are you today ?
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12">
-                  <div class="well pull-right visitor">
-                    I am fine thank you
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12">
-                  <div class="well pull-left eoger">
-                    That's good
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="chat-input" class="row">
-        <div class="col-md-12">
-          <form role="form">
-            <input type="text" class="form-control input-lg" placeholder="Ask me anything here..." autofocus />
-            <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </body>
+<html>
+<head lang="en">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>edouardoger.me</title>
+  <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/paper/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div id="app"></div>
+  <script src="./js/bundle.js"></script>
+</body>
 </html>
