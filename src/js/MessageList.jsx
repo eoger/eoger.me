@@ -27,7 +27,7 @@ var MessageList = React.createClass({
         <div className="col-md-12">
           <div className="panel panel-default">
             <div className="panel-heading">
-              Chat with Edouard Oger
+              Chatting with Edouard Oger
             </div>
             <div className="panel-body">
               <div className="scroll-wrapper">
