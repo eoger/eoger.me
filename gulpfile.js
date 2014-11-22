@@ -1,9 +1,11 @@
 var gulp = require('gulp');
 var path = require('path');
 var less = require('gulp-less');
+var uglify = require('gulp-uglify');
 var browserify = require('browserify');
 var reactify = require('reactify');
 var source = require('vinyl-source-stream');
+var streamify = require('gulp-streamify');
 
 var src = {
   less: ['./src/less/*.less'],
@@ -30,6 +32,7 @@ gulp.task('js', function() {
     .transform(reactify)
     .bundle()
     .pipe(source(build.main_js))
+    .pipe(streamify(uglify()))
     .pipe(gulp.dest(build.js));
 });
 
