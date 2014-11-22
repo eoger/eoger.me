@@ -22,29 +22,12 @@ html, body, #app, .container-fluid {
     flex: 1;
     overflow: auto;
 
-    .panel {
+    .eoger {
+      background-color: #80B3FF;
+    }
 
-      .panel-body {
-
-        .scroll-wrapper {
-
-          @message-margin: 10px;
-          .message(@bgcolor) {
-            max-width: 50%;
-            background-color: @bgcolor;
-          }
-
-          .eoger {
-            .message(#80B3FF);
-            margin-left: @message-margin;
-          }
-
-          .visitor {
-            .message(#FFC2CE);
-            margin-right: @message-margin;
-          }
-        }
-      }
+    .visitor {
+      background-color: #FFC2CE;
     }
   }
 
