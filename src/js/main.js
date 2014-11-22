@@ -1,6 +1,6 @@
 "use strict";
 
 var React = require('react');
-var Application = require('./Application.jsx');
+var Application = React.createFactory(require('./Application.jsx'));
 
-React.renderComponent(Application(), document.getElementById('app'));
+React.render(Application(), document.getElementById('app'));
