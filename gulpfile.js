@@ -20,7 +20,7 @@ var build = {
 };
 
 gulp.task('css', function () {
-  gulp.src(src.less)
+  return gulp.src(src.less)
     .pipe(less({
       paths: [ path.join(__dirname, 'src', 'less', 'includes') ]
     }))
@@ -28,7 +28,7 @@ gulp.task('css', function () {
 });
 
 gulp.task('js', function() {
-  browserify(src.main_js)
+  return browserify(src.main_js)
     .transform(reactify)
     .bundle()
     .pipe(source(build.main_js))
