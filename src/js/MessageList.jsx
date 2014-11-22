@@ -1,7 +1,8 @@
 "use strict";
 
 var React = require('react');
-var Message = require('./Message.jsx');
+var VisitorMessage = require('./VisitorMessage.jsx');
+var EogerMessage = require('./EogerMessage.jsx');
 var TypingMessage = require('./TypingMessage.jsx');
 
 var MessageList = React.createClass({
@@ -19,7 +20,12 @@ var MessageList = React.createClass({
     }
 
     var renderMessage = function(message) {
-      return <Message key={message.id} sender={message.sender} text={message.text} />
+      if(message.sender === 'visitor') {
+        return <VisitorMessage key={message.id} text={message.text} />
+      }
+      else {
+        return <EogerMessage key={message.id} text={message.text} />
+      }
     }
 
     return (
