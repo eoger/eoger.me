@@ -13,7 +13,7 @@ function delayedMessage(data) {
 }
 
 socket.on('connection', function (socket) {
-  delayedMessage({text: 'Hi, ask me anything!'});
+  delayedMessage(chatbot({text: 'firstmsg'}));
   socket.on('message', function (data) {
     delayedMessage(chatbot(data));
   });
