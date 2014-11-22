@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 var debug = require('debug')('eoger.me');
 var app = require('../app');
-var io = require('../io');
+var io = require('../sockets');
 
 app.set('port', process.env.PORT || 3000);
 
