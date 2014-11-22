@@ -15,7 +15,7 @@ var MessageForm = React.createClass({
   },
 
   changeHandler : function(e){
-      this.setState({ text : e.target.value });
+    this.setState({ text : e.target.value });
   },
 
   render: function() {
