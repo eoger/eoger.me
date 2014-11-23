@@ -1,6 +1,9 @@
 {
   "name": "eoger.me",
   "version": "1.0.0",
+  "engines": {
+    "node": "0.10.x"
+  },
   "private": true,
   "scripts": {
     "postinstall": "bower install",
