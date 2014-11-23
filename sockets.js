@@ -1,9 +1,9 @@
 "use strict";
 
-var socket = require('socket.io')();
 var chatbot = require('./lib/chatbot');
+var io = require('socket.io')();
 
-function delayedMessage(data) {
+function delayedMessage(socket, data) {
   setTimeout(function() {
     socket.emit('typing');
   }, 250);
@@ -12,12 +12,12 @@ function delayedMessage(data) {
   }, 2750);
 }
 
-socket.on('connection', function (socket) {
-  delayedMessage(chatbot({text: 'firstmsg'}));
+io.on('connection', function (socket) {
+  delayedMessage(socket, chatbot({text: 'firstmsg'}));
   
   socket.on('message', function (data)   {
-    delayedMessage(chatbot(data));
+    delayedMessage(socket, chatbot(data));
   });
 });
 
-module.exports = socket;
+module.exports = io;
