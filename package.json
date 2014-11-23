@@ -6,10 +6,9 @@
   },
   "private": true,
   "scripts": {
-    "postinstall": "bower install",
     "prestart": "gulp",
     "start": "DEBUG=eoger.me node ./bin/www",
-    "watch": "gulp watch"
+    "start-dev": "gulp && (DEBUG=eoger.me node ./bin/www & gulp watch)"
   },
   "dependencies": {
     "express": "~4.9.0",
@@ -24,14 +23,14 @@
     "superagent": "~0.21.0",
     "socket.io": "~1.2.1",
     "socket.io-client": "~1.2.1",
-
-    "bower": "~1.3.12",
     "gulp": "~3.8.10",
     "gulp-less": "~1.3.6",
     "gulp-uglify": "~1.0.1",
     "browserify": "~6.3.2",
     "reactify": "~0.17.1",
     "vinyl-source-stream": "~1.0.0",
-    "gulp-streamify": "0.0.5"
+    "gulp-streamify": "0.0.5",
+    "watchify": "~2.1.1",
+    "gulp-util": "~3.0.1"
   }
 }
