@@ -12,20 +12,20 @@ var MessageList = React.createClass({
     node.scrollTop = node.scrollHeight;
   },
 
+  renderMessage: function(message) {
+    if(message.sender === 'visitor') {
+      return <VisitorMessage key={message.id} text={message.text} />
+    }
+    else {
+      return <EogerMessage key={message.id} text={message.text} onMessageSubmit={this.props.onMessageSubmit} />
+    }
+  },
+
   render: function() {
 
     var typingMessage;
     if(this.props.typing) {
       typingMessage = <TypingMessage />;
-    }
-
-    var renderMessage = function(message) {
-      if(message.sender === 'visitor') {
-        return <VisitorMessage key={message.id} text={message.text} />
-      }
-      else {
-        return <EogerMessage key={message.id} text={message.text} />
-      }
     }
 
     return (
@@ -37,7 +37,7 @@ var MessageList = React.createClass({
             </div>
             <div className="panel-body">
               <div className="scroll-wrapper">
-                {this.props.messages.map(renderMessage)}
+                {this.props.messages.map(this.renderMessage)}
                 {typingMessage}
               </div>
             </div>

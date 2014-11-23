@@ -43,7 +43,7 @@ var Application = React.createClass({
   render: function() {
     return (
       <div className="container-fluid">
-        <MessageList messages={this.state.messages} typing={this.state.typing} />
+        <MessageList messages={this.state.messages} typing={this.state.typing} onMessageSubmit={this.handleSendMessage} />
         <MessageForm onMessageSubmit={this.handleSendMessage} />
       </div>
     );

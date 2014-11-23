@@ -10,7 +10,7 @@ var VisitorMessage = React.createClass({
       <div className="col-xs-12">
         <div className="media well visitor pull-right">
           <a className="media-left" href="#">
-            <img src="http://www.gravatar.com/avatar" alt="Sender avatar" width="64" height="64" />
+            <img src="img/visitor_avatar.jpg" alt="Visitor avatar" />
           </a>
           <div className="media-body">
             <h4 className="media-heading">You</h4>
