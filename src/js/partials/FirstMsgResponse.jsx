@@ -29,7 +29,7 @@ var FirstMsgResponse = React.createClass({
         <p>
         </p><ul>
           <li><a href="#" onClick={this.age}>How old are you ?</a></li>
-          <li><a href="#" onClick={this.previousjobs}>What are you previous profesional experiences ?</a></li>
+          <li><a href="#" onClick={this.previousjobs}>What are you previous professional experiences ?</a></li>
         </ul>
         <p />
         <p>However, if you'd prefer talking to a human, feel free to ask the <i>chatbot</i> for my email address.</p>
