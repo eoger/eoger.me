@@ -4,6 +4,7 @@ var React = require('react');
 var FirstMsgResponse = require('./partials/FirstMsgResponse.jsx');
 var UndefinedResponse = require('./partials/UndefinedResponse.jsx');
 var AgeResponse = require('./partials/AgeResponse.jsx');
+var WorkResponse = require('./partials/WorkResponse.jsx');
 
 var EogerMessage = React.createClass({
 
@@ -11,11 +12,14 @@ var EogerMessage = React.createClass({
 
     var response;
     switch(this.props.text) {
+      case 'firstmsg':
+        response = <FirstMsgResponse onMessageSubmit={this.props.onMessageSubmit} />
+        break;
       case 'age':
         response = <AgeResponse />
         break;
-      case 'firstmsg':
-        response = <FirstMsgResponse onMessageSubmit={this.props.onMessageSubmit} />
+      case 'work':
+        response = <WorkResponse />
         break;
       default:
         response = <UndefinedResponse />

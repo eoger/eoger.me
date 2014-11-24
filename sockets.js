@@ -14,7 +14,7 @@ function delayedMessage(socket, data) {
 
 io.on('connection', function (socket) {
   delayedMessage(socket, chatbot({text: 'firstmsg'}));
-  
+
   socket.on('message', function (data)   {
     delayedMessage(socket, chatbot(data));
   });

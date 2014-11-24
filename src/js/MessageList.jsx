@@ -6,7 +6,7 @@ var EogerMessage = require('./EogerMessage.jsx');
 var TypingMessage = require('./TypingMessage.jsx');
 
 var MessageList = React.createClass({
-   
+
   componentDidUpdate: function() {
     var node = this.getDOMNode();
     node.scrollTop = node.scrollHeight;

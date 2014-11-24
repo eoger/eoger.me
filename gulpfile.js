@@ -5,7 +5,6 @@ var less = require('gulp-less');
 var uglify = require('gulp-uglify');
 var browserify = require('browserify');
 var watchify = require('watchify');
-var reactify = require('reactify');
 var source = require('vinyl-source-stream');
 var streamify = require('gulp-streamify');
 
@@ -30,22 +29,27 @@ gulp.task('css', function () {
 });
 
 function bundlejs(watch) {
-  var bundler = browserify(src.main_js, watchify.args);
+  var bundler = browserify(src.main_js, watchify.args)
+    .transform('reactify')
+    .transform('browserify-shim')
+    .external('react')
+    .external('react/addons')
+    .external('socket.io-client')
+    .external('superagent');
   if(watch) {
     bundler = watchify(bundler);
   }
- 
-  bundler.transform(reactify);
- 
+
   var rebundle = function() {
     gutil.log('Start browserify');
     var stream = bundler.bundle();
     stream.on('error', gutil.log.bind(gutil, 'Browserify error'));
     stream.on('end', gutil.log.bind(gutil, 'End browserify'));
     stream = stream.pipe(source(build.main_js));
+    stream = stream.pipe(streamify(uglify()))
     return stream.pipe(gulp.dest(build.js));
   };
- 
+
   bundler.on('update', rebundle);
   return rebundle();
 }

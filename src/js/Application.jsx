@@ -3,7 +3,6 @@
 var React = require('react/addons');
 var MessageList = require('./MessageList.jsx');
 var MessageForm = require('./MessageForm.jsx');
-var request = require('superagent');
 var socket = require('socket.io-client')();
 
 var Application = React.createClass({
