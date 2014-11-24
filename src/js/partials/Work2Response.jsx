@@ -7,7 +7,7 @@ var WorkResponse = React.createClass({
   render: function() {
     return (
       <div>
-        <p>In the summer of 2014, I did an internship at <a href="http://worldline.com/en-us/home.html">Worldline</a><br />
+        <p>In the summer of 2014, I did an internship at <a href="http://worldline.com/en-us/home.html">Worldline</a>.<br />
         Worldline is a part of the <a href="http://atos.net/en-us/home.html">Atos</a> group, their domain of expertise is payment transactions systems.</p>
         <p>I worked in a department mainly developing for the IGN (the French National Geographic Institute).<br />
         The principal information system my department was working on handled the transformation of various satellite/plane images all the way

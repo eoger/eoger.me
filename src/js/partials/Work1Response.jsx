@@ -15,7 +15,7 @@ var WorkResponse = React.createClass({
         We worked on a travel planning/tracking app: you scan a QR code on a travel voucher and the related travel gets added on your phone with all its associated infos.</p>
         <p>Here are some screenshots of the app :</p>
         <div className="row">
-          <div className="col-md-offset-2 col-md-8">
+          <div className="col-sm-offset-2 col-sm-8 col-xs-offset-3 col-xs-6">
             <div className="row">
               <a href="./img/koedia_app_1.png" data-toggle="lightbox" data-gallery="multiimages" data-title="Travels listing activity" className="col-sm-4">
                 <img src="./img/koedia_app_1.png" className="img-responsive" />
