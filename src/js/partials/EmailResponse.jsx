@@ -4,18 +4,14 @@ var React = require('react');
 
 var EmailResponse = React.createClass({
 
-  getInitialState: function() {
-
-    var ageDifMs = Date.now() - new Date(1990, 9, 15);
-    var ageDate = new Date(ageDifMs);
-    var age = Math.abs(ageDate.getUTCFullYear() - 1970);
-
-    return { age: age };
-  },
-
   render: function() {
+
+    var rot13mail = "rqbhneq.btre@tznvy.pbz";
+    var decryptedmail = rot13mail.replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});
+    var mailto = "mailto:" + decryptedmail;
+
     return (
-      <p>You can contact me by email on <a href="mailto:edouard.oger@gmail.com">edouard.oger@gmail.com</a></p>
+      <p>You can contact me by email on <a href={mailto}>{decryptedmail}</a></p>
     );
   }
 });
