@@ -6,6 +6,7 @@ var UndefinedResponse = require('./partials/UndefinedResponse.jsx');
 var AgeResponse = require('./partials/AgeResponse.jsx');
 var Work1Response = require('./partials/Work1Response.jsx');
 var Work2Response = require('./partials/Work2Response.jsx');
+var EmailResponse = require('./partials/EmailResponse.jsx');
 
 var EogerMessage = React.createClass({
 
@@ -18,6 +19,9 @@ var EogerMessage = React.createClass({
         break;
       case 'age':
         response = <AgeResponse />
+        break;
+      case 'email':
+        response = <EmailResponse />
         break;
       case 'work1':
         response = <Work1Response />
