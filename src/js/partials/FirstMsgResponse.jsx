@@ -28,7 +28,6 @@ var FirstMsgResponse = React.createClass({
         <p>Here are some examples of questions you might want to ask:</p>
         <p>
         </p><ul>
-          <li><a href="#" onClick={this.favoriteColor}>What is your favorite color ?</a></li>
           <li><a href="#" onClick={this.age}>How old are you ?</a></li>
           <li><a href="#" onClick={this.previousjobs}>What are you previous profesional experiences ?</a></li>
         </ul>
