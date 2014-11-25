@@ -12,11 +12,11 @@ var Application = React.createClass({
   getInitialState: function() {
     socket.on('typing', this.handleTyping);
     socket.on('response', this.handleReceiveMessage);
-    return { messages: [], typing: false, text: '' };
+    var firstMsg = {sender: 'eoger', type: 'jsx', content: 'firstmsg'};
+    return { messages: [firstMsg], typing: false, text: '' };
   },
 
-  addMessage: function(sender, text) {
-    var message = {id: this.messageId++, sender: sender, text: text};
+  addMessage: function(message) {
     var messages = React.addons.update(this.state.messages, {$push: [message]});
     this.setState({messages: messages});
   },
@@ -31,11 +31,11 @@ var Application = React.createClass({
 
   handleReceiveMessage: function(data) {
     this.toggleTyping(false);
-    this.addMessage('eoger', data.text);
+    this.addMessage(data);
   },
 
   handleSendMessage: function(message) {
-    this.addMessage('visitor', message);
+    this.addMessage({sender: 'visitor', type: 'text', content: message});
     socket.emit('message', {text: message});
   },
 

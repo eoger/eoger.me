@@ -4,11 +4,6 @@ var React = require('react');
 
 var FirstMsgResponse = React.createClass({
 
-  favoriteColor: function(e) {
-    e.preventDefault();
-    this.props.onMessageSubmit('What is your favorite color?');
-  },
-
   age: function(e) {
     e.preventDefault();
     this.props.onMessageSubmit('How old are you?');

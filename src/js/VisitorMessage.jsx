@@ -14,7 +14,7 @@ var VisitorMessage = React.createClass({
           </a>
           <div className="media-body">
             <h4 className="media-heading">You</h4>
-            {this.props.text}
+            {this.props.message.content}
           </div>
         </div>
       </div>

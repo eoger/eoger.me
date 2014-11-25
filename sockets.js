@@ -10,20 +10,20 @@ function delayedMessage(socket, messages) {
 
   var offset = 0;
   messages.forEach(function(msg){
+    msg.sender = 'eoger';
     setTimeout(function() {
       socket.emit('typing');
     }, offset + typingDelay);
     setTimeout(function() {
-      socket.emit('response', {text: msg});
+      socket.emit('response', msg);
     }, offset + sendDelay);
     offset += sendDelay;
   });
 }
 
 io.on('connection', function (socket) {
-  chatbot({text: 'firstmsg'}, delayedMessage.bind(undefined, socket));
 
-  socket.on('message', function (data)   {
+  socket.on('message', function (data) {
     chatbot(data, delayedMessage.bind(undefined, socket));
   });
 });

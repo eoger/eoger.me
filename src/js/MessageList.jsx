@@ -14,10 +14,10 @@ var MessageList = React.createClass({
 
   renderMessage: function(message) {
     if(message.sender === 'visitor') {
-      return <VisitorMessage key={message.id} text={message.text} />
+      return <VisitorMessage key={message.id} message={message} />
     }
     else {
-      return <EogerMessage key={message.id} text={message.text} onMessageSubmit={this.props.onMessageSubmit} />
+      return <EogerMessage key={message.id} message={message} onMessageSubmit={this.props.onMessageSubmit} />
     }
   },
 
