@@ -1,7 +1,6 @@
 "use strict";
 
 var React = require('react');
-var UndefinedResponse = require('./partials/UndefinedResponse.jsx');
 var AgeResponse = require('./partials/AgeResponse.jsx');
 var Work1Response = require('./partials/Work1Response.jsx');
 var Work2Response = require('./partials/Work2Response.jsx');
@@ -12,9 +11,10 @@ var EogerMessage = React.createClass({
 
   render: function() {
 
+    var message = this.props.message;
     var response;
-    if(this.props.message.type === 'jsx') {
-      switch(this.props.message.content) {
+    if(message.type === 'jsx') {
+      switch(message.content) {
         case 'firstmsg':
           response = <FirstMsgResponse onMessageSubmit={this.props.onMessageSubmit} />
           break;
@@ -35,7 +35,7 @@ var EogerMessage = React.createClass({
       }
     }
     else {
-      response = this.props.message.content;
+      response = message.content;
     }
 
     return (
