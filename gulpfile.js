@@ -31,11 +31,7 @@ gulp.task('css', function () {
 function bundlejs(watch) {
   var bundler = browserify(src.main_js, watchify.args)
     .transform('reactify')
-    .transform('browserify-shim')
-    .external('react')
-    .external('react/addons')
-    .external('socket.io-client')
-    .external('superagent');
+    .transform('browserify-shim');
   if(watch) {
     bundler = watchify(bundler);
   }
